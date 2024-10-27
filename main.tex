@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage{amsmath, amssymb}  % For mathematical symbols
+\usepackage{amsthm}            % For theorem environments
+\usepackage{geometry}          % For page layout
+\usepackage{fancyhdr}          % For header and footer
+\usepackage{xcolor}            % For colored text
+\usepackage{enumitem}          % For custom lists
+\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}
+
+\usepackage{tikz}        % For creating the custom shapes and drawing the box
+\usepackage{graphicx}    % Recommended if you’re working with images and figures
+
+
+% Page layout
+\geometry{letterpaper, margin=1in}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{Lecture Notes}}
+\fancyhead[R]{\thepage}
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+
+% Title and author
+\title{\textbf{Mathematics for Computer Science}}
+
+\author{MIT - 6.042J}
+\date{\today}
+
+% Watermark settings for name
+\usepackage{enumitem}          % For custom lists
+\usepackage{background}        % For watermark
+\backgroundsetup{
+  position=current page.south east,
+  angle=0,
+  nodeanchor=south east,
+  color=black!30,
+  scale=0.8,
+  vshift=10pt,
+  hshift=-15pt,
+  contents={\small \href{https://www.linkedin.com/in/bilalnaseem96/}{Bilal Naseem}} % Replace with your name
+}
+
+
+
+% Custom environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newenvironment{important}{\color{red}\textbf{Important:} }{}
+
+% Custom commands
+\newcommand{\note}[1]{\textcolor{blue}{\textbf{#1}}} % Command for notes
+\newcommand{\exampletitle}[1]{\textbf{#1}}
+\newcommand{\mybox}[3]{
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}
+            \node[anchor=text,text width=\columnwidth-1.2cm, draw, rounded corners, line width=1pt, fill=#2!5, inner sep=5mm] (big) {\\#3};
+            \node[draw, rounded corners, line width=.5pt, fill=#2!30, anchor=west, xshift=5mm] (small) at (big.north west) {#1};
+        \end{tikzpicture}
+    \end{figure}
+}
+\newcommand{\insertimage}[2]{
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=#1\textwidth]{#2}  % Width can be specified
+        % No caption or label included
+    \end{figure}
+}
+
+
+\begin{document}
+
+% Title Page
+\maketitle
+\tableofcontents
+\newpage
+
+% Main Content
+\section{Introduction to Proofs}
+\input{1.tex}
+
+\section{Induction}
+\input{2.tex}
+
+\end{document}
