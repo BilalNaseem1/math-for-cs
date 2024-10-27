@@ -1,1 +1,64 @@
-..
+A \textit{Proof} is a method for ascertaining (find (something) out for certain; make sure of) the \textbf{truth}. Examples of ways in which we ascertain proof:
+\begin{enumerate}
+    \item Experimentation and observation (bedrock of physics)
+    \item Counterexamples
+    \item Sampling (repeating a process a large number of times)
+    \item Judge/Jury system
+    \item Religion
+    \item Word of boss (authority)
+    \item Inner conviction
+\end{enumerate}
+
+\subsection{Mathematical Proof}
+A \textit{Mathematical Proof} is a verification of a \textbf{Proposition} by a chain of \textbf{logical deductions} from a set of \textbf{axioms}.
+
+\subsection{Proposition}
+A Proposition is a statement that is either true or false. Examples:
+\begin{itemize}
+    \item $2+3=5$
+    \item $\forall n\in  \mathbb{N}, n^2+n+41$ is a prime number.
+\end{itemize}
+
+\subsubsection{Predicate}
+$$
+    \forall n \in \mathbb{N}, \underbrace{n^2 + n + 41}_{\text{Predicate}}
+$$
+A Predicate is a Proposition whose truth is determined by the values of its variables.
+
+In order to determine if this Proposition is true, we need to make sure that this Predicate is true for every Natural Number $\mathbb{N}$. Lets verify the Predicate by plugging in some values of Natural Numbers. The predicate if false, even though it worked for the first 40 numbers.
+
+\[
+    \begin{array}{|c|c|c|}
+        \hline
+        n      & n^2 + n + 41 & \text{Prime} \\
+        \hline
+        0      & 41           & \checkmark   \\
+        1      & 43           & \checkmark   \\
+        2      & 47           & \checkmark   \\
+        3      & 53           & \checkmark   \\
+        \vdots & \vdots       & \vdots       \\
+        20     & 461          & \checkmark   \\
+        \vdots & \vdots       & \vdots       \\
+        39     & 1601         & \checkmark   \\
+        40     & 1681=41^2    & \times       \\
+        41     & .            & \times       \\
+        \hline
+    \end{array}
+\]
+
+\subsection{Euler's Theorem}
+
+\begin{example}
+    $a^4 + b^4 + c^4 = d^4$ has no positive integer solutions.
+\end{example}
+
+This proposition was unsolved for centuries. It was conjectured to be true by Euler in 1769. It was disproved recently using very big numbers. Hence the correct Proposition would be :
+
+$$
+    \exists \quad a, b, c, d \in \mathbb{N}^+, \quad \underbrace{a^4 + b^4 + c^4 = d^4}_{\text{Predicate}}
+$$
+We care about such these proof problems because they involve \textit{Factoring large integers}. It is a way to break crypto systems like RSA which are used for everything we do electronically today.
+
+\begin{example}
+    The regions in any map can be coloured in 4 colours such that adjacent regions have different colours.
+\end{example}
